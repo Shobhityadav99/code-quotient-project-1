@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            let c= 0;
+            $(document).ready(function() {
+                $("#add").click(function() {
+                    if(c<10){
+                    c++;
+                    if(c%2==0){
+                        $("body").css("background-color","lightblue");
+                        $("#count").css("color","white");
+                    } else {
+                        $("body").css("background-color","grey");
+                        $("#count").css("color","red");
+                    }
+                    $("#count").text(`${c}`);
+                }
+                });
+                $("#subt").click(function() {
+                    if(c>0){
+                    c--;
+                    if(c%2!=0){
+                        $("body").css("background-color","grey");
+                        $("#count").css("color","red");
+                    } else {
+                        $("body").css("background-color","lightblue");
+                        $("#count").css("color","white");
+                    }
+                    $("#count").text(`${c}`);
+                }
+            });
+                $("#reset").click(function() {
+                    c=0;
+                    $("body").css("background-color","lightblue");
+                    $("#count").css("color","white");
+                    $("#count").text(`${c}`);
+                });
+            });
+        </script>
+</head>
+<body style="background-color: lightblue">
+    <div class="container"  style="text-align: center; padding: 200px;" >
+        <h1 style="font-size: 300%;">Counter</h1>
+        <h1 id="count" style="color: white; font-size: 400%;">0</h1>
+        <button type="button" class="btn btn-danger" id="add">+</button>
+        <button type="button" class="btn btn-secondary" id="reset">Reset</button>
+        <button type="button" class="btn btn-success" id="subt">-</button>
+    </div>
+</body>
+</html>
